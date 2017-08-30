@@ -4,16 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { WarningAlertComponent } from './warning-alert/warning-alert.component';
-import { SuccessAlertComponent } from './success-alert/success-alert.component';
-import { PageHeaderComponent}    from './page-header/page-header.component';
+
+import { PageHeaderComponent } from './page-header/page-header.component'
+import { AssignmentBodyComponent } from './assignment-body/assignment-body.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    WarningAlertComponent,
-    SuccessAlertComponent,
     PageHeaderComponent,
+    AssignmentBodyComponent
   ],
   imports: [
     BrowserModule,
