@@ -1,16 +1,27 @@
-<div class="form-group">
-    <label for="username">Username</label>
-    <input type="text" class="form-control" id="username" [(ngModel)]="username">
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading">Chosen Username</div>
+<div class="panel panel-default" [hidden]="!displayDetails">
     <div class="panel-body">
-        <p> {{ username }} </p>
+        <p> Secret Password = tuna </p>
     </div>
 </div>
 
 <button
     type="button"
     class="btn btn-primary"
-    [disabled]="!username.length"
-    (click)="resetUsername()">Reset Username</button>
+    (click)="onClickDisplayDetails()">
+    <div *ngIf="!displayDetails; else hideDetails">Display Details</div>
+    <ng-template #hideDetails>
+        <div>Hide Details</div>
+    </ng-template>
+</button>
+
+<div class="panel panel-default my-panel" [hidden]="!clicks.length">
+    <div class="panel-heading">Click Details</div>
+    <div class="panel-body">
+        <ul class="list-group my-list-group">
+          <li
+            class="list-group-item"
+            *ngFor="let click of clicks; index as i"
+            [ngClass]="{'list-group-item-info': i >= 5}"> {{ click }} </li>
+        </ul>
+    </div>
+</div>

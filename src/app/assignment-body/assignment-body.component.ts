@@ -6,13 +6,15 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./assignment-body.component.css']
 })
 export class AssignmentBodyComponent {
-    username = '';
+    clicks = [];
+    displayDetails:boolean = true;
 
     constructor() { }
 
     ngOnInit() { }
     
-    resetUsername() {
-        this.username = '';
+    onClickDisplayDetails() {
+        this.displayDetails = !this.displayDetails;
+        this.clicks.push("Clicked at " + new Date().toLocaleString());
     }
 }
